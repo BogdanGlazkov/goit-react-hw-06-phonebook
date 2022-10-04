@@ -10,8 +10,8 @@ import {
 } from 'redux-persist';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
-import contactsReducer from './reducers/contactsReducer';
-import filterReducer from './reducers/filterReducer';
+import { contactsReducer } from './contacts/contacts.slice';
+import { filterReducer } from './filter/filter.slice';
 
 const rootReducer = combineReducers({
   contacts: contactsReducer,
