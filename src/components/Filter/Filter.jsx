@@ -1,22 +1,21 @@
-import PropTypes from 'prop-types';
+import { useSelector, shallowEqual, useDispatch } from 'react-redux';
+import { changeFilter } from 'redux/actions/filterActions';
 import s from './Filter.module.css';
 
-export function Filter({ filterHandler, filter }) {
+export const Filter = () => {
+    const filter = useSelector(state => state.filter, shallowEqual);
+    const dispatch = useDispatch();
+
     return (
         <label className='label'>
             Find contacts by name
             <input
                 className={s.input}
-                onChange={filterHandler}
+                onChange={e => dispatch(changeFilter(e.target.value))}
                 type="text"
                 value={filter}
                 placeholder="Start typing the name..."
             ></input>
         </label>
     )
-}
-
-Filter.propTypes = {
-    filterHandler: PropTypes.func.isRequired,
-    filter: PropTypes.string.isRequired,
-}
+};
