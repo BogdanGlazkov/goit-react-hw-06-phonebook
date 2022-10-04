@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 import { nanoid } from 'nanoid';
-import { addContact } from 'redux/actions/contactsActions';
+import { addContact } from 'redux/contacts/contacts.slice';
 import s from './Form.module.css';
 import {Button} from 'components/Button';
 

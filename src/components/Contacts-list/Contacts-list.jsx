@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
-import { deleteContact } from 'redux/actions/contactsActions';
+import { deleteContact } from 'redux/contacts/contacts.slice';
 import {ContactsItem} from 'components/Contacts-item';
 import s from './Contacts-list.module.css';
 
